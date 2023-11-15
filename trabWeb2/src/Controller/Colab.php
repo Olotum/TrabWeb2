@@ -1,6 +1,6 @@
 <?php
 
-namespace QI\SistemaDeChamados\Controller;
+namespace QI\trabWeb2\Controller;
 
 session_start();
 switch ($_GET["operation"]) {

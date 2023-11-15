@@ -4,24 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PHP Help Desk - Login</title>
+    <link href="style.css" rel="stylesheet"/>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    
   </head>
-  <body class="d-flex justify-content-center align-items-center vh-100">
+  <body class="meu_bg2 d-flex justify-content-center align-items-center vh-100">
     <main
-      class="card bg-primary w-50 h-50 d-flex justify-content-center align-items-center"
+      class="meu_card w-50 h-50 d-flex justify-content-center align-items-center"
     >
-      <form action="src/Controller/Auth.php?operation=login" method="post">
+      <form class="" action="src/Controller/Auth.php?operation=login" method="post">
         <input
           type="text"
           id="user_cpf"
           name="user_cpf"
           class="form-control"
           placeholder="Digite seu cpf"
+          pattern="\d{11}"
           required
         />
         <input

@@ -20,13 +20,13 @@ function login()
         array(
             "name" => "Pedro",
             "cargo" => "Gerente",
-            "cpf" => "999",
+            "cpf" => "50308153090",
             "password" => password_hash("123456", PASSWORD_DEFAULT)
         ),
         array(
             "name" => "Maria",
             "cargo" => "Assistente de RH",
-            "cpf" => "111",
+            "cpf" => "56522216078",
             "password" => password_hash("123456", PASSWORD_DEFAULT)
         )
     );

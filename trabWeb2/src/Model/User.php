@@ -1,6 +1,6 @@
 <?php
 
-namespace QI\SistemaDeChamados\Model;
+namespace QI\trabWeb2\Model;
 
 class User{
     private $id;

@@ -1,6 +1,6 @@
 <?php
 
-namespace QI\SistemaDeChamados\Controller;
+namespace QI\trabWeb2\Controller;
 
 session_start();
 if(empty($_SESSION["user_data"])){
