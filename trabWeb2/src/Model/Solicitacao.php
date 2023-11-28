@@ -4,15 +4,15 @@ namespace QI\trabWeb2\Model;
 class Solicitacao{
     private $id;
     private $colab;
-    private $solicitador
+    private $solicitador;
     private $classification;
     private $description;
     private $notes;
 
     /**
      * Create a new Call object
-     * @param colab $user
-     * @param solicitador $user
+     * @param User $colab
+     * @param User $solicitador
      * @param string $classification 
      * @param string $description
      * @param string $classification

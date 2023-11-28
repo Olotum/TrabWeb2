@@ -20,7 +20,7 @@
     <a href="../Controller/Auth.php?operation=logout" class=" text-white">Sair</a>
   </nav>
   <main class="meu_card d-flex align-items-center mt-5">
-    <form action="#" method="post" class="w-75 p-3">
+    <form action="../Controller/Solicitacao.php?operation=insert" method="post" class="w-75 p-3">
       <label class="text-white" for="colaborador" class="d-block">Colaborador</label>
       <select name="colaborador" id="colaborador" class="form-select">
         <option value="user1">Alan</option>

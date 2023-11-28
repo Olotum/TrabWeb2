@@ -9,12 +9,12 @@ class ComposerStaticInitb48c3723ae55f8723b84eed53125aac5
     public static $prefixLengthsPsr4 = array (
         'Q' => 
         array (
-            'QI\\SistemaDeChamados\\' => 21,
+            'QI\\trabWeb2\\' => 12,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'QI\\SistemaDeChamados\\' => 
+        'QI\\trabWeb2\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

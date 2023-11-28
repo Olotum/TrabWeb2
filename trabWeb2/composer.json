@@ -1,10 +1,10 @@
 {
-    "name": "qi/sistema_de_chamados",
+    "name": "qi/trab_web2",
     "type": "project",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "QI\\SistemaDeChamados\\": "src/"
+            "QI\\trabWeb2\\": "src/"
         }
     },
     "authors": [

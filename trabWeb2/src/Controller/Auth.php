@@ -1,4 +1,7 @@
 <?php
+
+namespace QI\trabWeb2\Controller;
+
 session_start();
 
 switch ($_GET["operation"]) {
@@ -19,13 +22,13 @@ function login()
     $users = array(
         array(
             "name" => "Pedro",
-            "cargo" => "Gerente",
+            "classificacao" => "alto",
             "cpf" => "50308153090",
             "password" => password_hash("123456", PASSWORD_DEFAULT)
         ),
         array(
             "name" => "Maria",
-            "cargo" => "Assistente de RH",
+            "classificacao" => "baixo",
             "cpf" => "56522216078",
             "password" => password_hash("123456", PASSWORD_DEFAULT)
         )
