@@ -60,8 +60,8 @@ function insert()
     } catch (Exception $e) {
         $_SESSION["msg_error"] = "Ops, houve um erro inesperado!!!";
 
-        $log = $
-        // TODO Criar um log de sistema
+        $log = $e->getFile() . " - " . $e->getLine() . " - " . $e->getMessage();
+        Logger::writeLog($log);
     } finally {
         header("location:../View/message.php");
         exit;
