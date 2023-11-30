@@ -17,13 +17,13 @@ class Solicitacao{
      * @param string $description
      * @param string $classification
      */
-    public function __construct($colab,$solicitador,$classification,$description)
+    public function __construct($solicitador,$colab,$classification,$description,$notes)
     {
         $this->colab = $colab;
         $this->solicitador = $solicitador;
         $this->description = $description;
         $this->classification = $classification;
-        
+        $this->notes = $notes;
     }
 
     public function __get($attribute)

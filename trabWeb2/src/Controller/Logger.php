@@ -11,7 +11,7 @@ class Logger{
         }
 
         $file_path = $dir_path . date("Y-m-d H-i-s") . ".log";
-        $file = fopen($file_path, "W");
+        $file = fopen($file_path, "w");
         fwrite($file, $log);
         fclose($file);
     }

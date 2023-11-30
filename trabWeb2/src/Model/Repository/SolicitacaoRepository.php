@@ -5,14 +5,15 @@ namespace QI\trabWeb2\Model\Repository;
 use PDO;
 class SolicitacaoRepository{
     private $connection;
-    private const TABLE = "solicitacoes";
 
     public function __construct(){
         $this->connection = Connection::getConnection();
     }
 
     public function insert($solicitacao){
-        $stmt = $this->connection->prepare("insert into solicitacoes values(null,?,?,?,?,?);");
+        var_dump($solicitacao);
+        die;
+        $stmt = $this->connection->prepare("insert into solicitacoes values(null, ?, ?, ?, ?, ?);");
         $stmt->bindParam(1, $solicitacao->colab_id->id);
         $stmt->bindParam(2, $solicitacao->solicitador_id->id);
         $stmt->bindParam(3, $solicitacao->classification);

@@ -15,18 +15,16 @@
     <div>
         <a href="add-colab.php" class=" text-white">Novo Colaborador</a>
         <a href="add-colab.php" class=" text-white">Nova Solicitação</a>
-        <a href="list-calls.html" class=" text-white">Lista de Colaboradores</a>
+        <a href="../Controller/Auth.php?operation=logout" class=" text-white">Lista de Colaboradores</a>
     </div>
     <a href="../Controller/Auth.php?operation=logout" class=" text-white">Sair</a>
   </nav>
   <main class="meu_card d-flex align-items-center mt-5">
     <form action="../Controller/Solicitacao.php?operation=insert" method="post" class="w-75 p-3">
-      <label class="text-white" for="colaborador" class="d-block">Colaborador</label>
-      <select name="colaborador" id="colaborador" class="form-select">
-        <option value="user1">Alan</option>
-        <option value="user2">Robert</option>
-        <option value="user3">Lucia</option>
-      </select>
+      <label class="text-white" for="solicitador" class="d-block">Seu ID</label>
+      <input name="solicitador" id="solicitador" class="form-control" required></input>
+      <label class="text-white" for="colaborador" class="d-block">ID do colaborador</label>
+      <input name="colaborador" id="colaborador" class="form-control" required></input>
       <label class="text-white" for="nivel" class="d-block">Urgência</label>
       <select name="nivel" id="nivel" class="form-select">
         <option value="low">Baixo</option>

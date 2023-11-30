@@ -5,7 +5,10 @@
     "autoload": {
         "psr-4": {
             "QI\\trabWeb2\\": "src/"
-        }
+        },
+        "files": [
+            "Config.php"
+        ]
     },
     "authors": [
         {

@@ -15,7 +15,7 @@
         <div>
             <a href="add-colab.php" class=" text-white">Novo Colaborador</a>
             <a href="add-colab.php" class=" text-white">Nova Solicitação</a>
-            <a href="list-calls.html" class=" text-white">Lista de Colaboradores</a>
+            <a href="../Controller/Solicitacao.php?operation=findAll" class=" text-white">Lista de Solicitações</a>
         </div>
         <a href="../Controller/Auth.php?operation=logout" class=" text-white">Sair</a>
     </nav>

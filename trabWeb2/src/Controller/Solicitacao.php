@@ -1,6 +1,6 @@
 <?php
 
-namespace QI\SistemaDeChamados\Controller;
+namespace QI\trabWeb2\Controller;
 
 use Exception;
 use QI\trabWeb2\Model\{Solicitacao, User};
@@ -29,11 +29,11 @@ function insert()
         header("../View/message.php");
         exit;
     }
-    $solitador = new User($_POST["user_cpf"], ["user_clasificacao"]);
+    $solitador = new User($_POST["solicitador"]);
     $solitador->name = $_POST["user_name"];
     $solitador->id = 1;
 
-    $colab = new User($_POST["user_cpf"], ["user_clasificacao"]);
+    $colab = new User($_POST["colab"]);
     $colab->name = $_POST["user_name"];
     $colab->id = 1;
 
@@ -41,7 +41,8 @@ function insert()
         $solitador,
         $colab,
         $_POST["description"],
-        $_POST["classification"]
+        $_POST["classification"],
+        $_POST["notes"]
     );
 
     // TODO Validar os dados do POST
