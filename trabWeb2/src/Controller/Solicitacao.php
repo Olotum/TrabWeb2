@@ -30,12 +30,9 @@ function insert()
         exit;
     }
     $solitador = new User($_POST["solicitador"]);
-    $solitador->name = $_POST["user_name"];
-    $solitador->id = 1;
 
     $colab = new User($_POST["colab"]);
-    $colab->name = $_POST["user_name"];
-    $colab->id = 1;
+    
 
     $solicitacao = new Solicitacao(
         $solitador,

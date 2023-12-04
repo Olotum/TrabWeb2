@@ -22,8 +22,9 @@ class Solicitacao{
         $this->colab = $colab;
         $this->solicitador = $solicitador;
         $this->description = $description;
-        $this->classification = $classification;
-        $this->notes = $notes;
+        $this->classification = $classification; 
+        $this->$notes = $notes;
+        
     }
 
     public function __get($attribute)

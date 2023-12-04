@@ -23,10 +23,10 @@
     <form action="../Controller/Solicitacao.php?operation=insert" method="post" class="w-75 p-3">
       <label class="text-white" for="solicitador" class="d-block">Seu ID</label>
       <input name="solicitador" id="solicitador" class="form-control" required></input>
-      <label class="text-white" for="colaborador" class="d-block">ID do colaborador</label>
-      <input name="colaborador" id="colaborador" class="form-control" required></input>
-      <label class="text-white" for="nivel" class="d-block">Urgência</label>
-      <select name="nivel" id="nivel" class="form-select">
+      <label class="text-white" for="colab" class="d-block">ID do colaborador</label>
+      <input name="colab" id="colab" class="form-control" required></input>
+      <label class="text-white" for="classification" class="d-block">Urgência</label>
+      <select name="classification" id="classification" class="form-select">
         <option value="low">Baixo</option>
         <option value="medium">Médio</option>
         <option value="high">Alto</option>
