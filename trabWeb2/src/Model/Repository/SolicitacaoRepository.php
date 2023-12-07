@@ -11,8 +11,6 @@ class SolicitacaoRepository{
     }
 
     public function insert($solicitacao){
-        var_dump($solicitacao);
-        die;
         $stmt = $this->connection->prepare("insert into solicitacoes values(null, ?, ?, ?, ?, ?);");
         $stmt->bindParam(1, $solicitacao->colab_id->id);
         $stmt->bindParam(2, $solicitacao->solicitador_id->id);
@@ -23,7 +21,12 @@ class SolicitacaoRepository{
     }
 
     public function findAll(){
-        $stmt = $this->connection->query("select s.*,u.name from solicitacoes s inner join users u on s.solicitador_id = u.id");
+        $stmt = $this->connection->query("select s.*,u.name as solicitador,us.name as colab from solicitacoes s inner join users u on s.solicitador_id = u.id inner join users us on s.colab_id = us.id");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function delete($id){
+        $stmt = $this->connection->query("delete from solicitacoes where id=$id");
+        return $stmt->execute();
     }
 }

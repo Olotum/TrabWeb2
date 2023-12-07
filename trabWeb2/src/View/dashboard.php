@@ -14,7 +14,7 @@
     <nav class="meu_bg p-3 d-flex justify-content-between">
         <div>
             <a href="add-colab.php" class=" text-white">Novo Colaborador</a>
-            <a href="add-colab.php" class=" text-white">Nova Solicitação</a>
+            <a href="add-solicitacao.php" class=" text-white">Nova Solicitação</a>
             <a href="../Controller/Solicitacao.php?operation=findAll" class=" text-white">Lista de Solicitações</a>
         </div>
         <a href="../Controller/Auth.php?operation=logout" class=" text-white">Sair</a>

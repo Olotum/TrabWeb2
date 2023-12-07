@@ -16,6 +16,9 @@ switch ($_GET["operation"]) {
     case "findAll":
         findAll();
         break;
+    case "delete":
+        delete();
+        break;
     default:
         $_SESSION["msg_warning"] = "Operação inválida!!!";
         header("location:../View/message.php");
@@ -30,7 +33,6 @@ function insert()
         exit;
     }
     $solitador = new User($_POST["solicitador"]);
-
     $colab = new User($_POST["colab"]);
     
 
@@ -71,4 +73,28 @@ function findAll()
     $solicitacao_repository = new SolicitacaoRepository();
     $_SESSION["list-of-solicitacoes"] = $solicitacao_repository->findAll();
     header("location:../View/list-of-solicitacoes.php");
+}
+
+function delete(){
+    $id = $_GET["code"];
+    if(empty($id)){
+        $_SESSION["msg_error"] = "O código do chamado é inválido!!!";
+        header("location:../View/message.php");
+        exit;
+    }
+    try{
+        $solicitacao_repository = new SolicitacaoRepository();
+        $result = $solicitacao_repository->delete($id);
+        if($result){
+            $_SESSION["msg_success"] = "Solicitação removido com sucesso!!!";
+        }else{
+            $_SESSION["msg_warning"] = "Lamento, não foi possível remover o solicitação";
+        }
+    }catch(Exception $e){
+        $_SESSION["msg_error"] = "Ops. Houve um erro inesperado em nossa base de dados!!!";
+        $log = $e->getFile() . " - " . $e->getLine() . " - " . $e->getMessage();
+        Logger::writeLog($log);
+    }finally{
+        header("location:../View/message.php");
+    }
 }

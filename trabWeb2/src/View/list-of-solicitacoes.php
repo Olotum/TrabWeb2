@@ -20,7 +20,60 @@
         <a href="../Controller/Auth.php?operation=logout" class=" text-white">Sair</a>
     </nav>
     <main class="text-white text-center">
-        
+        <table class="table table-bordered table-primary">
+            <thead>
+                <th>#</th>
+                <th>Nome do solicitador</th>
+                <th>Nome do responsavel</th>
+                <th>Classificação</th>
+                <th>Descrição</th>
+                <th>Observações</th>
+                <th>Ações</th>
+            </thead>
+            <tbody>
+                <?php
+                if (empty($_SESSION["list-of-solicitacoes"])) :
+                ?>
+                    <td colspan=6>Não existem chamados cadastrados</td>
+                <?php
+                endif;
+                foreach ($_SESSION["list-of-solicitacoes"] as $solicitacao) :
+                ?>
+                    <tr>
+                        <td>
+                            <?= $solicitacao["id"] ?>
+                        </td>
+                        <td>
+                            <?= $solicitacao["solicitador"] ?>
+                        </td>
+                        <td>
+                            <?= $solicitacao["colab"] ?>
+                        </td>
+                        <td>
+                            <?= $solicitacao["classification"] ?>
+                        </td>
+                        <td>
+                            <?= $solicitacao["description"] ?>
+                        </td>
+                        <td>
+                            <?= ($solicitacao["notes"]) ? $solicitacao["notes"] : "Nenhuma observação" ?>
+                        </td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="../Controller/solicitacao.php?operation=findOne&code=<?= $solicitacao["id"] ?>" class="btn btn-warning">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <a href="../Controller/solicitacao.php?operation=delete&code=<?= $solicitacao["id"] ?>" class="btn btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                <?php
+                endforeach;
+                ?>
+            </tbody>
+        </table>
     </main>
 </body>
 

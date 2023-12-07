@@ -4,12 +4,16 @@ namespace QI\trabWeb2\Model\Repository;
 
 use \PDO;
 
-class Connection{
+class Connection
+{
     private static $connection;
 
-    private function __construct(){}
+    private function __construct()
+    {
+    }
 
-    public static function getConnection(){
+    public static function getConnection()
+    {
         if(self::$connection == null){
             self::$connection = new PDO(DSN,USER,PASSWORD);
         }

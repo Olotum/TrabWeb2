@@ -13,7 +13,7 @@ switch ($_GET["operation"]) {
         break;
     default:
         $_SESSION["msg_warning"] = "Operação inválida!!!";
-        header("location:../View/message.php");
+        header("../View/message.php");
         exit;
 }
 
@@ -35,7 +35,8 @@ function login()
     );
 
     if (empty($_POST)) {
-        $_SESSION["msg_error"] = "Ops, houve um erro inesperado!!!";
+        $_SESSION["msg_error"] = "
+    Ops, houve um erro inesperado!!!";
         header("location:../View/message.php");
         exit;
     }

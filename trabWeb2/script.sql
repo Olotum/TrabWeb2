@@ -19,5 +19,4 @@ create table if not exists solicitacoes(
     constraint fk_colab foreign key (colab_id) references users(id),
     constraint fk_solicitador foreign key (solicitador_id) references users(id)
 );
-
-select s.*,u.name from solicitacoes s inner join users u on s.solicitador_id = u.id;
+select s.*,u.name as "solicitador",us.name as "colab" from solicitacoes s inner join users u on s.solicitador_id = u.id inner join users us on s.colab_id = us.id;
