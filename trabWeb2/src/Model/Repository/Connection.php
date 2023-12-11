@@ -11,7 +11,7 @@ class Connection
     // Declare as constantes fora do método
     const DSN = 'mysql:host=localhost;dbname=team_mk;charset=utf8';
     const USER = 'root';
-    const PASSWORD = 'Jose01/01/203@';
+    const PASSWORD = '***';
 
     private function __construct()
     {
