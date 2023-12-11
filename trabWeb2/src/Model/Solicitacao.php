@@ -3,27 +3,29 @@
 namespace QI\trabWeb2\Model;
 class Solicitacao{
     private $id;
-    private $colab;
-    private $solicitador;
+    private $colab_id;
+    private $solicitador_id;
     private $classification;
     private $description;
     private $notes;
 
     /**
      * Create a new Call object
-     * @param User $colab
-     * @param User $solicitador
+     * @param User $colab_id
+     * @param User $solicitador_id
      * @param string $classification 
      * @param string $description
      */
-    public function __construct($solicitador,$colab,$classification,$description,$notes)
-    {
-        $this->colab = $colab;
-        $this->solicitador = $solicitador;
-        $this->description = $description;
-        $this->classification = $classification;
-        
-    }
+    public function __construct($solicitador_id, $colab_id, $classification, $description, $notes = null)
+{
+    $this->colab_id = $colab_id;
+    $this->solicitador_id = $solicitador_id;
+    $this->classification = $classification;
+    $this->description = $description;
+    $this->notes = $notes;
+}
+
+
 
     public function __get($attribute)
     {

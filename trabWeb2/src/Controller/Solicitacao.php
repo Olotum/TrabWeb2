@@ -29,20 +29,22 @@ function insert()
 {
     if (empty($_POST)) {
         $_SESSION["msg_error"] = "Ops. Houve um erro inesperado!!!";
-        header("../View/message.php");
+        header("location:../View/message.php");
         exit;
     }
-    $solitador = new User($_POST["solicitador"]);
-    $colab = new User($_POST["colab"]);
+    $colab_id = new User(intval($_POST["colab_id"]));
+    $solicitador_id = new User(intval($_POST["solicitador_id"]));
+
     
 
     $solicitacao = new Solicitacao(
-        $solitador,
-        $colab,
-        $_POST["description"],
+        $solicitador_id,
+        $colab_id,
         $_POST["classification"],
-        $_POST["notes"]
+        $_POST["description"],
+        $_POST["notes"] ?? null
     );
+    
 
     // TODO Validar os dados do POST
     $errors = array();
@@ -64,9 +66,9 @@ function insert()
         Logger::writeLog($log);
     } finally {
         header("location:../View/message.php");
-        exit;
     }
 }
+
 
 function findAll()
 {

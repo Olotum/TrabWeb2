@@ -12,28 +12,34 @@
     <?php
     session_start();
     ?>
-    <?php
-    if (!empty($_SESSION["msg_error"])) :
-    ?>
+
+    <?php if (!empty($_SESSION["errors"])) : ?>
+        <div class="alert alert-danger">
+            <?php foreach ($_SESSION["errors"] as $error) : ?>
+                <p><?= $error ?></p>
+            <?php endforeach; ?>
+            <a href="../../index.html">Voltar</a>
+        </div>
+        <?php unset($_SESSION["errors"]); ?>
+    <?php elseif (!empty($_SESSION["msg_error"])) : ?>
         <div class="alert alert-danger">
             <p><?= $_SESSION["msg_error"] ?></p>
             <a href="../../index.html">Voltar</a>
         </div>
-    <?php
-        unset($_SESSION["msg_error"]);
-    endif;
-    ?>
-    <?php
-    if (!empty($_SESSION["msg_warning"])) :
-    ?>
+        <?php unset($_SESSION["msg_error"]); ?>
+    <?php elseif (!empty($_SESSION["msg_warning"])) : ?>
         <div class="alert alert-warning">
-            <p><?= $_SESSION["msg_warning"]  ?></p>
+            <p><?= $_SESSION["msg_warning"] ?></p>
             <a href="../../index.html">Voltar</a>
         </div>
-    <?php
-        unset($_SESSION["msg_warning"]);
-    endif;
-    ?>
+        <?php unset($_SESSION["msg_warning"]); ?>
+    <?php elseif (!empty($_SESSION["msg_success"])) : ?>
+        <div class="alert alert-success">
+            <p><?= $_SESSION["msg_success"] ?></p>
+            <a href="../../index.html">Voltar</a>
+        </div>
+        <?php unset($_SESSION["msg_success"]); ?>
+    <?php endif; ?>
 </body>
 
 </html>

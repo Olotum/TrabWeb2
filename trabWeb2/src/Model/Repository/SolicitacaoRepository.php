@@ -11,14 +11,24 @@ class SolicitacaoRepository{
     }
 
     public function insert($solicitacao){
-        $stmt = $this->connection->prepare("insert into solicitacoes values(null, ?, ?, ?, ?, ?);");
-        $stmt->bindParam(1, $solicitacao->colab_id->id);
-        $stmt->bindParam(2, $solicitacao->solicitador_id->id);
-        $stmt->bindParam(3, $solicitacao->classification);
-        $stmt->bindParam(4, $solicitacao->description);
-        $stmt->bindParam(5, $solicitacao->notes);
+        $colabId = $solicitacao->colab_id->id;
+        $solicitadorId = $solicitacao->solicitador_id->id;
+        $classification = $solicitacao->classification;
+        $description = $solicitacao->description;
+        $notes = $solicitacao->notes;
+        
+        $stmt = $this->connection->prepare("INSERT INTO solicitacoes VALUES (null, ?, ?, ?, ?, ?);");
+        
+        $stmt->bindParam(1, $colabId);
+        $stmt->bindParam(2, $solicitadorId);
+        $stmt->bindParam(3, $classification);
+        $stmt->bindParam(4, $description);
+        $stmt->bindParam(5, $notes);
+        
         return $stmt->execute();
     }
+    
+    
 
     public function findAll(){
         $stmt = $this->connection->query("select s.*,u.name as solicitador,us.name as colab from solicitacoes s inner join users u on s.solicitador_id = u.id inner join users us on s.colab_id = us.id");

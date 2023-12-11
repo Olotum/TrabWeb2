@@ -14,8 +14,8 @@ class User{
     /**
     * @param string $cpf
     */
-    public function __construct($cpf){
-        $this->cpf = $cpf;
+    public function __construct($id){
+        $this->id = $id;
     }
 
     public function __get($attribute){

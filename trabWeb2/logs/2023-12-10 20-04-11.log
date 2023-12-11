@@ -1,0 +1,1 @@
+C:\xampp\htdocs\trabWeb2\src\Model\Repository\SolicitacaoRepository.php - 28 - SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'solicitador_id' cannot be null
